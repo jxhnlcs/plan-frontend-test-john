@@ -1,0 +1,91 @@
+@use '@/styles/variables' as vars;
+
+.card {
+  background: vars.$white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  min-width: 220px;
+  max-width: 280px;
+  flex: 1;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  }
+}
+
+.content {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  flex: 1;
+}
+
+.flagContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.flag {
+  object-fit: contain;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.countryName {
+  font-size: vars.$fz_lg;
+  font-weight: 700;
+  color: vars.$gray_dark;
+  text-align: center;
+  margin: 0;
+}
+
+.capitalInfo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: vars.$gray_medium;
+  font-size: vars.$fz_sm;
+}
+
+.viewMoreButton {
+  display: block;
+  width: 100%;
+  padding: 0.75rem 1.5rem;
+  background: vars.$orange_light;
+  color: vars.$white;
+  font-size: vars.$fz_df;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 25px;
+  margin-top: auto;
+  transition: background 0.2s ease, transform 0.2s ease;
+
+  &:hover {
+    background: vars.$orange_dark;
+  }
+}
+
+@media (max-width: vars.$breakpoint_md) {
+  .card {
+    min-width: 160px;
+    max-width: 100%;
+  }
+
+  .countryName {
+    font-size: vars.$fz_df;
+  }
+
+  .viewMoreButton {
+    padding: 0.625rem 1rem;
+    font-size: vars.$fz_sm;
+  }
+}

@@ -6,10 +6,26 @@ $pink_light: #ec268f;
 $red_light: #e02023;
 $orange_light: #f5821f;
 $orange_dark: #db751b;
+$orange_gradient_start: #f7941d;
+$orange_gradient_end: #f9a825;
+
+// Cores do layout
+$white: #ffffff;
+$gray_light: #f5f5f5;
+$gray_medium: #6b6b6b;
+$gray_dark: #333333;
+$card_header_bg: #6b6b6b;
 
 //Variáveis de tamanho das fontes do projeto: (fz = font-size)
 $fz_xs: 0.8125rem; // 13px
 $fz_sm: 0.9375rem; // 15px
 $fz_df: 1rem; // 16px
 $fz_lg: 1.25rem; // 20px
-$fz_xl: 2rem; // 20px
+$fz_xl: 2rem; // 32px
+$fz_xxl: 2.5rem; // 40px
+
+// Breakpoints
+$breakpoint_sm: 640px;
+$breakpoint_md: 768px;
+$breakpoint_lg: 1024px;
+$breakpoint_xl: 1280px;

@@ -1,0 +1,24 @@
+@use '@/styles/variables' as vars;
+
+.header {
+  width: 100%;
+  padding: 1.5rem 2rem;
+
+  a {
+    display: inline-block;
+    transition: opacity 0.2s ease;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  @media (max-width: vars.$breakpoint_md) {
+    padding: 1rem;
+    text-align: center;
+
+    a {
+      display: block;
+    }
+  }
+}

@@ -1,0 +1,111 @@
+@use '@/styles/variables' as vars;
+
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 280px;
+}
+
+.selectButton {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0.875rem 1.25rem;
+  font-size: vars.$fz_df;
+  color: vars.$gray_medium;
+  background: vars.$white;
+  border: 2px solid vars.$white;
+  border-radius: 25px;
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+
+  &:focus {
+    border-color: vars.$orange_light;
+    box-shadow: 0 0 0 3px rgba(vars.$orange_light, 0.2);
+  }
+}
+
+.selectedText {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.icon {
+  color: vars.$gray_dark;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.iconRotated {
+  transform: rotate(180deg);
+}
+
+.dropdown {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  left: 0;
+  right: 0;
+  background: vars.$orange_light;
+  border-radius: 12px;
+  padding: 0.75rem 0;
+  margin: 0;
+  list-style: none;
+  max-height: 300px;
+  overflow-y: auto;
+  z-index: 100;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+
+  // Scrollbar styling
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 4px;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.6);
+    }
+  }
+}
+
+.option {
+  padding: 0.625rem 1.25rem;
+  color: vars.$white;
+  font-size: vars.$fz_sm;
+  cursor: pointer;
+  transition: background 0.2s ease;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
+}
+
+.optionSelected {
+  background: rgba(255, 255, 255, 0.15);
+  font-weight: 600;
+}
+
+@media (max-width: vars.$breakpoint_md) {
+  .container {
+    max-width: 100%;
+  }
+
+  .selectButton {
+    font-size: vars.$fz_sm;
+    padding: 0.75rem 1rem;
+  }
+
+  .dropdown {
+    max-height: 250px;
+  }
+}

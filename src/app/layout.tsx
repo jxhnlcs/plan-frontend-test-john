@@ -12,8 +12,9 @@ import 'react-toastify/dist/ReactToastify.css'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Plan',
-  description: 'Template for a Next.js app with TypeScript and Sass',
+  title: 'Catálogo de Países | Plan Marketing',
+  description: 'Explore e visualize informações sobre países do mundo. Filtre por nome, continente e idioma.',
+  keywords: ['países', 'catálogo', 'REST Countries', 'Plan Marketing'],
 }
 
 export default function RootLayout({
@@ -22,10 +23,19 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang="pt-BR">
       <body className={inter.className}>
         <Providers>{children}</Providers>
-        <ToastContainer />
+        <ToastContainer 
+          position="top-right"
+          autoClose={5000}
+          hideProgressBar={false}
+          newestOnTop
+          closeOnClick
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+        />
       </body>
     </html>
   )

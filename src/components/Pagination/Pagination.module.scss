@@ -1,0 +1,90 @@
+@use '@/styles/variables' as vars;
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 2rem 0;
+}
+
+.navButton {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: 2px solid vars.$white;
+  border-radius: 50%;
+  color: vars.$white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &:hover:not(:disabled) {
+    background: rgba(255, 255, 255, 0.2);
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  &:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.4);
+  }
+}
+
+.dots {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  padding: 0;
+  background: transparent;
+  border: 2px solid vars.$white;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &:hover:not(.dotActive) {
+    background: rgba(255, 255, 255, 0.3);
+  }
+
+  &:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.4);
+  }
+}
+
+.dotActive {
+  background: vars.$white;
+  cursor: default;
+}
+
+@media (max-width: vars.$breakpoint_md) {
+  .container {
+    padding: 1.5rem 0;
+    gap: 0.5rem;
+  }
+
+  .navButton {
+    width: 36px;
+    height: 36px;
+
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  .dot {
+    width: 10px;
+    height: 10px;
+  }
+}

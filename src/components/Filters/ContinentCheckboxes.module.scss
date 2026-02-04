@@ -1,0 +1,85 @@
+@use '@/styles/variables' as vars;
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 2rem;
+  justify-content: center;
+  padding: 0.5rem 0;
+}
+
+.checkboxLabel {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.checkbox {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.customCheckbox {
+  width: 20px;
+  height: 20px;
+  border: 2px solid vars.$white;
+  border-radius: 50%;
+  background: transparent;
+  position: relative;
+  transition: all 0.2s ease;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: vars.$orange_light;
+    transition: transform 0.2s ease;
+  }
+}
+
+.checkbox:checked + .customCheckbox {
+  background: vars.$white;
+
+  &::after {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+.checkbox:focus-visible + .customCheckbox {
+  box-shadow: 0 0 0 3px rgba(vars.$white, 0.4);
+}
+
+.labelText {
+  color: vars.$white;
+  font-size: vars.$fz_sm;
+  font-weight: 500;
+}
+
+@media (max-width: vars.$breakpoint_md) {
+  .container {
+    gap: 0.75rem 1.25rem;
+  }
+
+  .labelText {
+    font-size: vars.$fz_xs;
+  }
+
+  .customCheckbox {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+@media (max-width: vars.$breakpoint_sm) {
+  .container {
+    gap: 0.5rem 1rem;
+  }
+}

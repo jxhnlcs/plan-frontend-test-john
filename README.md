@@ -125,12 +125,86 @@ Este projeto deve ser utilizado como base para o desenvolvimento do seu teste. A
 
 ## ⭐ Instruções
 
-​
+### Pré-requisitos
+- Node.js 18.x ou superior
+- npm 9.x ou superior
 
-## ⭐ Breve explicação
+### Instalação e execução local
 
-​
+```bash
+# Clone o repositório
+git clone <url-do-repositorio>
+cd plan-frontend-test
+
+# Instale as dependências
+npm install
+
+# Execute o servidor de desenvolvimento
+npm run dev
+```
+
+O aplicativo estará disponível em `http://localhost:3000` (ou `http://localhost:3001` se a porta 3000 estiver em uso).
+
+### Scripts disponíveis
+
+- `npm run dev` - Inicia o servidor de desenvolvimento com Turbopack
+- `npm run build` - Cria a build de produção
+- `npm run start` - Inicia o servidor de produção
+- `npm run lint` - Executa o ESLint
+- `npm run format` - Formata o código com Prettier e ESLint
+
+---
+
+## ⭐ Breve explicação das escolhas técnicas
+
+### Arquitetura e Estrutura
+
+**Componentização:** A aplicação foi estruturada seguindo o princípio de componentes reutilizáveis e desacoplados:
+- `Layout/` - Header e Footer compartilhados entre as páginas
+- `CountryCard/` - Card de exibição de países com header de região
+- `Filters/` - Componentes de filtro (SearchInput, ContinentCheckboxes, LanguageSelect)
+- `Pagination/` - Componente de paginação com navegação por dots
+
+**Custom Hooks:** Criado o hook `useCountries` para encapsular toda a lógica de:
+- Busca de dados da API
+- Filtragem (por nome, continente e idioma)
+- Paginação
+- Estados de loading e erro
+
+### Estilização
+
+**SCSS Modules:** Optei por CSS Modules com SCSS por:
+- Escopo de classes isolado por componente
+- Suporte a variáveis e mixins SCSS
+- Evita conflitos de estilos globais
+- Melhor organização do código CSS
+
+**Variáveis SCSS:** Todas as cores, fontes e breakpoints estão centralizados em `variables.scss` para facilitar manutenção e consistência visual.
+
+### Consumo da API
+
+**REST Countries API v3.1:** 
+- Utilizado o endpoint `/all` com filtro de campos para otimizar a resposta
+- Tradução automática para português usando o campo `translations.por`
+- Mapeamento de regiões e sub-regiões para português
+
+**Tratamento de erros:** Implementado feedback visual com react-toastify para erros de rede.
+
+### Acessibilidade
+
+- Labels apropriados em inputs e botões
+- Atributos ARIA em componentes interativos (listbox, checkboxes)
+- Navegação por teclado nos dropdowns
+- Contraste adequado de cores
+
+### Performance
+
+- Imagens otimizadas com Next.js Image (flags via unoptimized pois são SVGs externos)
+- Paginação para evitar renderização de muitos cards
+- Memoização com useMemo e useCallback para evitar re-renders desnecessários
+
+---
 
 ## ⭐ Link do deploy (se houver)
 
-​
+*Em breve...*

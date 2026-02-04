@@ -1,0 +1,16 @@
+@use '@/styles/variables' as vars;
+
+.header {
+  background-color: vars.$card_header_bg;
+  padding: 0.625rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.regionName {
+  color: vars.$white;
+  font-size: vars.$fz_sm;
+  font-weight: 600;
+  font-style: italic;
+}

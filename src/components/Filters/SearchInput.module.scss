@@ -1,0 +1,53 @@
+@use '@/styles/variables' as vars;
+
+.container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 350px;
+}
+
+.input {
+  width: 100%;
+  padding: 0.875rem 3rem 0.875rem 1.25rem;
+  font-size: vars.$fz_df;
+  color: vars.$gray_dark;
+  background: vars.$white;
+  border: 2px solid vars.$white;
+  border-radius: 25px;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+
+  &::placeholder {
+    color: vars.$gray_medium;
+    font-style: italic;
+  }
+
+  &:focus {
+    border-color: vars.$orange_light;
+    box-shadow: 0 0 0 3px rgba(vars.$orange_light, 0.2);
+  }
+}
+
+.icon {
+  position: absolute;
+  right: 1rem;
+  color: vars.$orange_light;
+  pointer-events: none;
+}
+
+@media (max-width: vars.$breakpoint_md) {
+  .container {
+    max-width: 100%;
+  }
+
+  .input {
+    font-size: vars.$fz_sm;
+    padding: 0.75rem 2.5rem 0.75rem 1rem;
+  }
+
+  .icon {
+    right: 0.75rem;
+  }
+}

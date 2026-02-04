@@ -9,5 +9,6 @@
   "tailwindCSS.experimental.configFile": "src/styles/globals.scss",
   "editor.quickSuggestions": {
     "strings": true
-  }
+  },
+  "nuxt.isNuxtApp": false
 }

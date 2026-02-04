@@ -1,36 +1,121 @@
 @use '@/styles/variables' as vars;
 
-.title {
-  color: vars.$orange_light;
-  font-size: vars.$fz_xl;
-  font-weight: 600;
+.pageContainer {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-.content {
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 0 2rem;
+  max-width: 1400px;
   width: 100%;
-  height: 100vh;
+  margin: 0 auto;
+}
+
+.filtersSection {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.filtersRow {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.countriesSection {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.countriesGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  justify-items: center;
+}
+
+.loadingContainer,
+.errorContainer,
+.emptyContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding: 4rem 2rem;
+  color: vars.$white;
+  font-size: vars.$fz_lg;
+  text-align: center;
+}
 
-  .text {
-    color: vars.$orange_dark;
-    font-size: vars.$fz_xl;
-    font-weight: 700;
+.spinner {
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+// Responsividade
+
+@media (max-width: vars.$breakpoint_xl) {
+  .countriesGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: vars.$breakpoint_lg) {
+  .main {
+    padding: 0 1.5rem;
   }
 
-  .button {
-    background: vars.$orange_dark;
-    color: white;
-    font-size: vars.$fz_df;
-    font-weight: 600;
-    text-transform: uppercase;
-    padding: 7px 20px;
-    border-radius: 8px;
+  .countriesGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+}
 
-    &:hover {
-      filter: brightness(1.2);
-    }
+@media (max-width: vars.$breakpoint_md) {
+  .main {
+    padding: 0 1rem;
+  }
+
+  .filtersRow {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .countriesGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+}
+
+@media (max-width: vars.$breakpoint_sm) {
+  .countriesGrid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .loadingContainer,
+  .errorContainer,
+  .emptyContainer {
+    padding: 2rem 1rem;
+    font-size: vars.$fz_df;
   }
 }

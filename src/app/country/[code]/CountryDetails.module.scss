@@ -1,0 +1,236 @@
+@use '@/styles/variables' as vars;
+
+.pageContainer {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 2rem;
+  max-width: 1000px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.card {
+  background: vars.$white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  width: 100%;
+}
+
+.cardHeader {
+  background-color: vars.$card_header_bg;
+  padding: 0.75rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.regionName {
+  color: vars.$white;
+  font-size: vars.$fz_sm;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.cardContent {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.flagSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.flagContainer {
+  border: 1px solid #eee;
+  overflow: hidden;
+}
+
+.flag {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.flagLabel {
+  color: vars.$gray_medium;
+  font-size: vars.$fz_sm;
+}
+
+.infoSection {
+  display: flex;
+  flex-direction: column;
+}
+
+.countryName {
+  font-size: vars.$fz_xxl;
+  font-weight: 700;
+  color: vars.$gray_dark;
+  margin-bottom: 1.5rem;
+}
+
+.infoList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+  margin-bottom: 2rem;
+}
+
+.infoItem {
+  display: flex;
+  gap: 0.5rem;
+
+  dt {
+    color: vars.$gray_medium;
+    font-size: vars.$fz_df;
+    min-width: 100px;
+    text-align: right;
+
+    &::after {
+      content: '';
+    }
+  }
+
+  dd {
+    color: vars.$gray_dark;
+    font-size: vars.$fz_df;
+    font-weight: 600;
+    margin: 0;
+  }
+}
+
+.backButton {
+  display: inline-block;
+  padding: 0.875rem 3rem;
+  background: vars.$orange_light;
+  color: vars.$white;
+  font-size: vars.$fz_df;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 25px;
+  transition: background 0.2s ease;
+  align-self: center;
+  margin-top: auto;
+
+  &:hover {
+    background: vars.$orange_dark;
+  }
+
+  &:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(vars.$orange_light, 0.4);
+  }
+}
+
+.loadingContainer,
+.errorContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  color: vars.$white;
+  font-size: vars.$fz_lg;
+  text-align: center;
+  width: 100%;
+}
+
+.spinner {
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+// Responsividade
+
+@media (max-width: vars.$breakpoint_lg) {
+  .cardContent {
+    grid-template-columns: 220px 1fr;
+    gap: 1.5rem;
+  }
+
+  .countryName {
+    font-size: vars.$fz_xl;
+  }
+}
+
+@media (max-width: vars.$breakpoint_md) {
+  .main {
+    padding: 1.5rem 1rem;
+  }
+
+  .cardContent {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .flagSection {
+    order: 1;
+  }
+
+  .infoSection {
+    order: 2;
+  }
+
+  .flagContainer {
+    max-width: 280px;
+  }
+
+  .countryName {
+    font-size: vars.$fz_lg;
+    text-align: center;
+  }
+
+  .infoList {
+    gap: 0.5rem;
+  }
+
+  .infoItem {
+    flex-direction: column;
+    gap: 0.125rem;
+
+    dt {
+      text-align: left;
+      min-width: auto;
+    }
+  }
+}
+
+@media (max-width: vars.$breakpoint_sm) {
+  .cardContent {
+    padding: 1.5rem 1rem;
+  }
+
+  .countryName {
+    font-size: vars.$fz_lg;
+    margin-bottom: 1rem;
+  }
+
+  .backButton {
+    width: 100%;
+    padding: 0.75rem 2rem;
+  }
+}

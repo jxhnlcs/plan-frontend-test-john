@@ -1,0 +1,37 @@
+@use '@/styles/variables' as vars;
+
+.footer {
+  width: 100%;
+  background-color: vars.$gray_dark;
+  padding: 1.5rem 2rem;
+  margin-top: auto;
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.copyright {
+  color: vars.$white;
+  font-size: vars.$fz_sm;
+}
+
+@media (max-width: vars.$breakpoint_md) {
+  .footer {
+    padding: 1rem;
+  }
+
+  .content {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .copyright {
+    font-size: vars.$fz_xs;
+  }
+}
