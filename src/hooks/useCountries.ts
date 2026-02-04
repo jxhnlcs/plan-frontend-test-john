@@ -17,15 +17,15 @@ interface UseCountriesReturn {
   error: string | null
   // Filtros
   searchTerm: string
-  setSearchTerm: (term: string) => void
+  setSearchTerm: (_term: string) => void
   selectedContinents: string[]
-  setSelectedContinents: (continents: string[]) => void
+  setSelectedContinents: (_continents: string[]) => void
   selectedLanguage: string
-  setSelectedLanguage: (language: string) => void
+  setSelectedLanguage: (_language: string) => void
   // Paginação
   currentPage: number
   totalPages: number
-  setCurrentPage: (page: number) => void
+  setCurrentPage: (_page: number) => void
 }
 
 export function useCountries(): UseCountriesReturn {

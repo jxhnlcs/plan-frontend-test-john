@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import { toast } from 'react-toastify'
+
 import { Loader2 } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'

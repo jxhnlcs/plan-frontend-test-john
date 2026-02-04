@@ -1,14 +1,15 @@
 'use client'
 
-import { ChevronDown } from 'lucide-react'
 import { useState, useRef, useEffect } from 'react'
+
+import { ChevronDown } from 'lucide-react'
 
 import styles from './LanguageSelect.module.scss'
 
 interface LanguageSelectProps {
   languages: string[]
   selected: string
-  onChange: (language: string) => void
+  onChange: (_language: string) => void
 }
 
 export function LanguageSelect({ languages, selected, onChange }: LanguageSelectProps) {

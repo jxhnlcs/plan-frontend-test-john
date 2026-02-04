@@ -6,7 +6,7 @@ import styles from './ContinentCheckboxes.module.scss'
 
 interface ContinentCheckboxesProps {
   selected: string[]
-  onChange: (continents: string[]) => void
+  onChange: (_continents: string[]) => void
 }
 
 export function ContinentCheckboxes({ selected, onChange }: ContinentCheckboxesProps) {

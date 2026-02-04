@@ -12,8 +12,8 @@ function transformCountry(country: Country): CountrySimplified {
   // Formatar moedas
   const currencies = country.currencies
     ? Object.values(country.currencies)
-        .map((c) => `${c.name}${c.symbol ? ` (${c.symbol})` : ''}`)
-        .join(', ')
+      .map((c) => `${c.name}${c.symbol ? ` (${c.symbol})` : ''}`)
+      .join(', ')
     : 'N/A'
 
   // Formatar idiomas

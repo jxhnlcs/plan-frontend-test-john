@@ -6,7 +6,7 @@ import styles from './SearchInput.module.scss'
 
 interface SearchInputProps {
   value: string
-  onChange: (value: string) => void
+  onChange: (_value: string) => void
   placeholder?: string
 }
 

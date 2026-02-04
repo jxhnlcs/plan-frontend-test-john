@@ -62,6 +62,13 @@ export default defineConfig([
       '@typescript-eslint/no-explicit-any': 'off',
       'react/display-name': 'off',
       'react/prop-types': 'off',
+      'react/react-in-jsx-scope': 'off', // Next.js não precisa importar React
+      'no-unused-vars': 'off', // Desabilitado em favor da regra do TypeScript
+      '@typescript-eslint/no-unused-vars': ['error', { 
+        argsIgnorePattern: '^_',
+        varsIgnorePattern: '^_',
+        destructuredArrayIgnorePattern: '^_'
+      }],
 
       'import-helpers/order-imports': [
         'error',
