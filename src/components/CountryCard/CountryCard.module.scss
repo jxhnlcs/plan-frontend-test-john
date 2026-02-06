@@ -8,8 +8,9 @@
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   display: flex;
   flex-direction: column;
-  min-width: 220px;
-  max-width: 280px;
+  width: 100%;
+  min-width: 240px;
+  max-width: 320px;
   flex: 1;
 
   &:hover {
@@ -19,11 +20,11 @@
 }
 
 .content {
-  padding: 1.25rem;
+  padding: 1rem 1.25rem 1.25rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.75rem;
+  gap: 0.5rem;
   flex: 1;
 }
 
@@ -42,7 +43,7 @@
 .countryName {
   font-size: vars.$fz_lg;
   font-weight: 700;
-  color: vars.$gray_dark;
+  color: vars.$gray_medium;
   text-align: center;
   margin: 0;
 }
@@ -53,15 +54,16 @@
   gap: 0.5rem;
   color: vars.$gray_medium;
   font-size: vars.$fz_sm;
+  font-weight: 500;
 }
 
 .viewMoreButton {
   display: block;
   width: 100%;
-  padding: 0.75rem 1.5rem;
+  padding: 0.625rem 1.5rem;
   background: vars.$orange_light;
   color: vars.$white;
-  font-size: vars.$fz_df;
+  font-size: vars.$fz_sm;
   font-weight: 600;
   text-align: center;
   text-decoration: none;
@@ -76,7 +78,7 @@
 
 @media (max-width: vars.$breakpoint_md) {
   .card {
-    min-width: 160px;
+    min-width: 200px;
     max-width: 100%;
   }
 
@@ -87,5 +89,12 @@
   .viewMoreButton {
     padding: 0.625rem 1rem;
     font-size: vars.$fz_sm;
+  }
+}
+
+@media (max-width: vars.$breakpoint_sm) {
+  .card {
+    min-width: 100%;
+    max-width: 100%;
   }
 }

@@ -3,7 +3,7 @@
 .container {
   position: relative;
   width: 100%;
-  max-width: 280px;
+  max-width: 260px;
 }
 
 .selectButton {
@@ -11,10 +11,11 @@
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  padding: 0.875rem 1.25rem;
+  padding: 0.75rem 1.25rem;
   font-size: vars.$fz_df;
-  color: vars.$gray_medium;
-  background: vars.$white;
+  font-weight: 600;
+  color: vars.$gray_dark;
+  background: transparent;
   border: 2px solid vars.$white;
   border-radius: 25px;
   cursor: pointer;
@@ -22,8 +23,8 @@
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
 
   &:focus {
-    border-color: vars.$orange_light;
-    box-shadow: 0 0 0 3px rgba(vars.$orange_light, 0.2);
+    border-color: vars.$white;
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3);
   }
 }
 
@@ -31,10 +32,11 @@
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  color: vars.$gray_dark;
 }
 
 .icon {
-  color: vars.$gray_dark;
+  color: vars.$white;
   flex-shrink: 0;
   transition: transform 0.2s ease;
 }

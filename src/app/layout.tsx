@@ -2,14 +2,14 @@ import React from 'react'
 import { ToastContainer } from 'react-toastify'
 
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Exo } from 'next/font/google'
 
 import { Providers } from '@/components/Providers'
 
 import '@/styles/globals.scss'
 import 'react-toastify/dist/ReactToastify.css'
 
-const inter = Inter({ subsets: ['latin'] })
+const exo = Exo({ subsets: ['latin'], weight: ['300', '400', '500', '600', '700'] })
 
 export const metadata: Metadata = {
   title: 'Catálogo de Países | Plan Marketing',
@@ -24,7 +24,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-BR">
-      <body className={inter.className}>
+      <body className={exo.className}>
         <Providers>{children}</Providers>
         <ToastContainer 
           position="top-right"

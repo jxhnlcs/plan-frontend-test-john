@@ -30,23 +30,21 @@ export default function Home() {
 
   return (
     <div className={styles.pageContainer}>
-      <Header />
+      <Header>
+        <SearchInput 
+          value={searchTerm} 
+          onChange={setSearchTerm} 
+        />
+        <LanguageSelect
+          languages={languages}
+          selected={selectedLanguage}
+          onChange={setSelectedLanguage}
+        />
+      </Header>
       
       <main className={styles.main}>
         {/* Filtros */}
         <section className={styles.filtersSection}>
-          <div className={styles.filtersRow}>
-            <SearchInput 
-              value={searchTerm} 
-              onChange={setSearchTerm} 
-            />
-            <LanguageSelect
-              languages={languages}
-              selected={selectedLanguage}
-              onChange={setSelectedLanguage}
-            />
-          </div>
-          
           <ContinentCheckboxes
             selected={selectedContinents}
             onChange={setSelectedContinents}

@@ -5,35 +5,37 @@
   display: flex;
   align-items: center;
   width: 100%;
-  max-width: 350px;
+  max-width: 380px;
 }
 
 .input {
   width: 100%;
-  padding: 0.875rem 3rem 0.875rem 1.25rem;
+  padding: 0.75rem 3rem 0.75rem 1.25rem;
   font-size: vars.$fz_df;
+  font-weight: 600;
   color: vars.$gray_dark;
-  background: vars.$white;
+  background: transparent;
   border: 2px solid vars.$white;
   border-radius: 25px;
   outline: none;
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
 
   &::placeholder {
-    color: vars.$gray_medium;
+    color: vars.$gray_dark;
     font-style: italic;
+    font-weight: 600;
   }
 
   &:focus {
-    border-color: vars.$orange_light;
-    box-shadow: 0 0 0 3px rgba(vars.$orange_light, 0.2);
+    border-color: vars.$white;
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3);
   }
 }
 
 .icon {
   position: absolute;
   right: 1rem;
-  color: vars.$orange_light;
+  color: vars.$white;
   pointer-events: none;
 }
 
@@ -44,7 +46,7 @@
 
   .input {
     font-size: vars.$fz_sm;
-    padding: 0.75rem 2.5rem 0.75rem 1rem;
+    padding: 0.5rem 2.5rem 0.5rem 1rem;
   }
 
   .icon {

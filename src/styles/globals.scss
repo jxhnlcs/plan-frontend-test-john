@@ -17,8 +17,8 @@ body {
 }
 
 body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
-  background: linear-gradient(135deg, vars.$orange_gradient_start 0%, vars.$orange_light 50%, vars.$orange_gradient_end 100%);
+  font-family: 'Exo', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+  background: linear-gradient(180deg, vars.$orange_gradient_start 0%, vars.$orange_gradient_middle 50%, vars.$orange_gradient_end 100%);
   color: vars.$gray_dark;
   line-height: 1.5;
 }

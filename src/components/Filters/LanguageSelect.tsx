@@ -82,7 +82,7 @@ export function LanguageSelect({ languages, selected, onChange }: LanguageSelect
               className={`${styles.option} ${selected === language ? styles.optionSelected : ''}`}
               onClick={() => handleSelect(language)}
             >
-              {language};
+              {language}
             </li>
           ))}
         </ul>

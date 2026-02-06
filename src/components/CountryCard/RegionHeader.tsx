@@ -6,7 +6,7 @@ const CONTINENT_IMAGES: Record<string, string> = {
   'North America': '/img/regions/north-america.svg',
   'South America': '/img/regions/south-america.svg',
   'Asia': '/img/regions/asia.svg',
-  'Europe': '/img/regions/europe.svg',
+  'Europe': '/img/regions/europa.svg',
   'Oceania': '/img/regions/oceania.svg',
   'Antarctica': '/img/regions/antarctica.svg',
 }
@@ -24,9 +24,9 @@ export function RegionHeader({ region, continent }: RegionHeaderProps) {
       className={styles.header}
       style={bgImage ? { 
         backgroundImage: `url(${bgImage})`,
-        backgroundPosition: 'right center',
+        backgroundPosition: 'right 8px center',
         backgroundRepeat: 'no-repeat',
-        backgroundSize: '40px'
+        backgroundSize: 'auto 80%'
       } : undefined}
     >
       <span className={styles.regionName}>{region}</span>
